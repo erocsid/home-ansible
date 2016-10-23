@@ -1,0 +1,25 @@
+- name: install common packages
+  apt: name={{item}} state=present update_cache=yes
+  with_items:
+    - htop
+    - nmap
+    - tcpdump
+    - lynx
+    - vim
+    - rsync
+    - openssh-client
+    - tmux
+    - screen
+    - dnsutils
+    - curl
+    - wget
+    - nfs-common
+    - net-tools
+    - telnet
+    - lvm2
+    - zip
+    - unzip
+    - sudo
+    - lsof
+    - netcat
+    - iperf

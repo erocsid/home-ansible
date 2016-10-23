@@ -1,0 +1,8 @@
+- hosts: all
+  name: do stuff common to all servers
+  become: yes
+  become_method: sudo
+
+  roles:
+    - user_rcfiles
+    - standard_packages
