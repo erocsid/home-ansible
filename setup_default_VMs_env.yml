@@ -6,4 +6,5 @@
   roles:
     - user_rcfiles
     - standard_packages
+    - disable_firewalld
     - centos_update

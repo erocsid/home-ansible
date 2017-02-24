@@ -1,0 +1,3 @@
+- firewalld:
+    state: disabled
+    permanent: true
