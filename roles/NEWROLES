@@ -1,5 +1,9 @@
 salt-master:
  - add saltstack repo
  - yum install salt-master
+ - accept keys (???)
 
-
+salt-minion:
+ - ditto but minion
+ - add master to /etc/salt/minion
+ - add master pubkey to same master_finger option
