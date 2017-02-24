@@ -5,5 +5,5 @@ monitor
 backups
 voyager
 
-#[external]
-#web
+[external]
+web

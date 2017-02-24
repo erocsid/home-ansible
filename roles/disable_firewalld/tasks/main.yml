@@ -1,3 +1,5 @@
-- firewalld:
-    state: disabled
-    permanent: true
+- name: disable firewalld
+  systemd:
+    name: firewalld
+    state: stopped
+    enabled: no
