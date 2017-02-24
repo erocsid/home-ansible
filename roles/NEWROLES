@@ -1,0 +1,5 @@
+salt-master:
+ - add saltstack repo
+ - yum install salt-master
+
+
