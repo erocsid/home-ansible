@@ -1,5 +1,5 @@
 - name: install common packages
-  apt: name={{item}} state=present update_cache=yes
+  yum: name={{item}} state=installed
   with_items:
     - htop
     - nmap
@@ -7,13 +7,13 @@
     - lynx
     - vim
     - rsync
-    - openssh-client
+    - openssh-clients
     - tmux
     - screen
-    - dnsutils
+    - bind-utils
     - curl
     - wget
-    - nfs-common
+    - nfs-utils
     - net-tools
     - telnet
     - lvm2
@@ -21,5 +21,14 @@
     - unzip
     - sudo
     - lsof
-    - netcat
+    - nmap-ncat
     - iperf
+    - mtr
+    - nmap-ncat
+    - bzip2
+    - sysstat
+    - samba-client
+    - ntfs-3g
+    - ansible
+    - fuse-sshfs
+    - epel-release

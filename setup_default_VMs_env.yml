@@ -1,5 +1,5 @@
 - hosts: all
-  name: do stuff common to all servers
+  name: do stuff common to all servers for your average at-home VM
   become: yes
   become_method: sudo
 

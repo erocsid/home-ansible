@@ -1,4 +1,7 @@
-circles
-data
+[internal]
 devops
+circles2
 monitor
+
+#[external]
+#web
