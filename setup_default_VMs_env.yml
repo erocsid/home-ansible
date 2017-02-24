@@ -6,3 +6,4 @@
   roles:
     - user_rcfiles
     - standard_packages
+    - centos_update
