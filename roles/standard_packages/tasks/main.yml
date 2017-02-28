@@ -31,4 +31,7 @@
     - ntfs-3g
     - ansible
     - fuse-sshfs
+    - cifs-utils
     - epel-release
+    - ncftp
+    - lftp
