@@ -35,3 +35,5 @@
     - epel-release
     - ncftp
     - lftp
+    - mailx
+    - git

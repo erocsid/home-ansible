@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: internal,external,ovirt
   name: do stuff common to all servers for your average at-home VM
   become: yes
   become_method: sudo
@@ -8,3 +8,21 @@
     - standard_packages
     - disable_firewalld
     - centos_update
+
+- hosts: external-withfirewalld
+  name: do stuff common to all servers for your average at-home VM (keeping firewalld)
+  become: yes
+  become_method: sudo
+
+  roles:
+    - user_rcfiles
+    - standard_packages
+    - centos_update
+
+- hosts: ovirt
+  name: install ovirt stuff
+  become: yes
+  become_method: sudo
+
+  roles:
+    - ovirt

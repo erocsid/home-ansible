@@ -1,0 +1,4 @@
+- name: install common packages (ovirt)
+  yum: name={{item}} state=installed
+  with_items:
+    - python-ovirt-engine-sdk4
