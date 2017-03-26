@@ -1,0 +1,25 @@
+1) add installation of salt minions to ansible
+
+2) start building home-salt setup to
+ - install samba on backups and circles2 (backups already setup by hand)
+ - install web server on web
+ - install database on web
+ - install some monitoring on monitor
+
+ - grains:
+   mode1=samba
+   mode2=samba-media,samba-home,samba-backups
+
+   mode1=web
+   made2=web-nginx
+
+   mode1=database
+   mode2=mysql
+
+   made1=monitor
+   made2=???
+
+
+ - setup website that publicly recoards denied firewall shit via salt on web
+
+3) build nfsen and librenms on netmon
