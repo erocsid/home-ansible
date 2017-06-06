@@ -8,6 +8,7 @@
     - standard_packages
     - disable_firewalld
     - centos_update
+    - fail2ban
 
 - hosts: external-withfirewalld
   name: do stuff common to all servers for your average at-home VM (keeping firewalld)
@@ -18,6 +19,7 @@
     - user_rcfiles
     - standard_packages
     - centos_update
+    - fail2ban
 
 - hosts: ovirt
   name: install ovirt stuff

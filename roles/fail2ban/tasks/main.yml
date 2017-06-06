@@ -1,0 +1,7 @@
+- name: install fail2ban
+  yum: name={{item}} state=installed
+  with_items:
+    - fail2ban
+
+- name: setup fail2ban jail.conf
+  template: src=../templates/jail.conf dest=/etc/fail2ban/jail.conf owner=root group=root mode=0644
