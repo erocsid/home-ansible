@@ -5,3 +5,6 @@
 
 - name: setup fail2ban jail.conf
   template: src=../templates/jail.conf dest=/etc/fail2ban/jail.conf owner=root group=root mode=0644
+
+- name: start fail2ban daemon
+  service: name=fail2ban state=started
