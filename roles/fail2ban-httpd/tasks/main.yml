@@ -1,0 +1,2 @@
+- name: setup fail2ban jail.d/httpd.conf
+  template: src=../templates/httpd.conf dest=/etc/fail2ban/jail.d/httpd.conf owner=root group=root mode=0644

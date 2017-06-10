@@ -1,0 +1,2 @@
+- name: setup fail2ban jail.d/standard_unix_auth.conf
+  template: src=../templates/standard_unix_auth.conf dest=/etc/fail2ban/jail.d/standard_unix_auth.conf owner=root group=root mode=0644

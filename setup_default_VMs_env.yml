@@ -1,4 +1,4 @@
-- hosts: internal,external,ovirt
+- hosts: all
   name: do stuff common to all servers for your average at-home VM
   become: yes
   become_method: sudo
@@ -6,20 +6,18 @@
   roles:
     - user_rcfiles
     - standard_packages
-    - disable_firewalld
     - centos_update
     - fail2ban
+    - fail2ban-sshd
+    - fail2ban-standard_unix_auth
 
-- hosts: external-withfirewalld
-  name: do stuff common to all servers for your average at-home VM (keeping firewalld)
+- hosts: internal,webservers,mailservers,ovirt,workstation
+  name: disable firewalld
   become: yes
   become_method: sudo
 
   roles:
-    - user_rcfiles
-    - standard_packages
-    - centos_update
-    - fail2ban
+    - disable_firewalld
 
 - hosts: ovirt
   name: install ovirt stuff
@@ -28,3 +26,20 @@
 
   roles:
     - ovirt
+
+- hosts: workstation
+  name: install build tools for workstations
+  become: yes
+  become_method: sudo
+
+  roles:
+    - build_tools
+
+- hosts: webservers
+  name: install stuff for webservers
+  become: yes
+  become_method: sudo
+
+  roles:
+    - httpd
+    - fail2ban-httpd
