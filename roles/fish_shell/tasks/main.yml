@@ -1,0 +1,36 @@
+- name: add fishshell repo
+  yum_repository:
+    name: shells_fish_release_2
+    description: Fish shell - 2.x release series (CentOS_7)
+    baseurl: http://download.opensuse.org/repositories/shells:/fish:/release:/2/CentOS_7/
+    gpgkey: http://download.opensuse.org/repositories/shells:/fish:/release:/2/CentOS_7//repodata/repomd.xml.key
+    gpgcheck: yes
+
+- name: install fishshell
+  yum: name={{item}} state=installed
+  with_items:
+    - fish
+
+- file:
+    path: /home/discore/.config/fish
+    state: directory
+    owner: discore
+    group: discore
+    mode: 0755
+
+- file:
+    path: /home/discore/.config/fish/functions
+    state: directory
+    owner: discore
+    group: discore
+    mode: 0755
+
+- name: setup config.fish
+  template: src=../templates/config.fish dest=/home/discore/.config/fish/config.fish owner=discore group=discore mode=0644
+- name: setup fish_prompt.fish
+  template: src=../templates/fish_prompt.fish dest=/home/discore/.config/fish/functions/fish_prompt.fish owner=discore group=discore mode=0644
+- name: setup l.fish
+  template: src=../templates/l.fish dest=/home/discore/.config/fish/functions/l.fish owner=discore group=discore mode=0644
+
+- name: set shell to fish
+  user: name=discore shell=/usr/bin/fish

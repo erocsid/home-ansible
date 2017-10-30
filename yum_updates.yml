@@ -1,0 +1,7 @@
+- hosts: all
+  name: yum update all hosts
+  become: yes
+  become_method: sudo
+
+  roles:
+    - yum_updates
