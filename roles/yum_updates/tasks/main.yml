@@ -1,2 +1,11 @@
 - name: yum update all installed packages
   yum: name=* state=latest
+
+- name: clean up downloaded packages and repo info
+  command: "{{ item }}"
+  with_items:
+    - yum clean all
+    - rm -rf /var/cache/yum
+
+- name: rebuild repo info
+  shell: yum updateinfo
