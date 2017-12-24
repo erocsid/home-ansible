@@ -1,0 +1,6 @@
+- name: install iCinga2 yum repo
+  yum_repository:
+    name: icinga
+    description: iCinga yum package repo
+    baseurl: https://packages.icinga.com/epel/icinga-rpm-release-7-latest.noarch.rpm
+  when: "ansible_distribution == 'CentOS' and ansible_distribution_major_version == '7'"

@@ -1,4 +1,4 @@
-- name: install common packages (ovirt)
-  yum: name={{item}} state=installed
-  with_items:
-    - python-ovirt-engine-sdk4
+---
+#- name: install oVirt package repo
+- import_tasks: install_ovirt_package_repo.yml
+- import_tasks: debian.yml

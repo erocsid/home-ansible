@@ -1,0 +1,7 @@
+- hosts: monitoring
+  name: install iCinga2 repo and package
+  become: yes
+  become_method: sudo
+
+  roles:
+    - install_monitoring

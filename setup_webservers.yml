@@ -1,0 +1,8 @@
+- hosts: webservers
+  name: install stuff for webservers
+  become: yes
+  become_method: sudo
+
+  roles:
+    - httpd
+    - fail2ban-httpd

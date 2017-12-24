@@ -1,0 +1,7 @@
+#- hosts: ovirt
+#  name: install ovirt stuff
+#  become: yes
+#  become_method: sudo
+#
+#  roles:
+#    - ovirt

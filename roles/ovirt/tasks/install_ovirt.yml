@@ -1,0 +1,4 @@
+- name: install oVirt 4.0
+  yum: name={{item}} state=installed
+  with_items:
+    - ovirt-release-40

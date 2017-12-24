@@ -1,0 +1,8 @@
+---
+- import_playbook: disabled_firewalld.yml
+- import_playbook: setup_default_VMs_env.yml
+#- import_playbook: setup_monitoring-install_icinga.yml
+#- import_playbook: setup_ovirt.yml
+- import_playbook: setup_webservers.yml
+- import_playbook: setup_workstations.yml
+- import_playbook: yum_updates.yml

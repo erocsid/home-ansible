@@ -1,0 +1,6 @@
+- name: install oVirt package repo
+  yum_repository:
+    name: ovirt41
+    description: oVirt yum package repo
+    baseurl: http://mirrors.rit.edu/ovirt/pub
+  when: "ansible_distribution == 'CentOS' and ansible_distribution_major_version == '7'"

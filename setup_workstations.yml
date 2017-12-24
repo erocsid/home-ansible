@@ -1,0 +1,8 @@
+- hosts: workstation
+  name: install build tools for workstations
+  become: yes
+  become_method: sudo
+
+  roles:
+    - build_tools
+    - fish_shell
