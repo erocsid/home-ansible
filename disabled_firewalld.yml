@@ -1,4 +1,4 @@
-- hosts: internal,webservers,mailservers,,workstation,monitoring
+- hosts: internal,webservers,mailservers,,workstation,monitoring,devops
   name: disable firewalld
   become: yes
   become_method: sudo

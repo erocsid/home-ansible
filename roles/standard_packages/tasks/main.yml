@@ -37,3 +37,4 @@
     - lftp
     - mailx
     - git
+    - ovirt-guest-agent-common
